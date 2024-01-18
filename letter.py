@@ -1,5 +1,4 @@
 from app.envelope import Envelope
-from app.constants import Font
 
 
 if __name__ == "__main__":
