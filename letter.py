@@ -2,7 +2,7 @@ from app.envelope import Envelope
 
 
 if __name__ == "__main__":
-    envelope = Envelope()
-    envelope.add_page()
-    envelope.envelope_marks()
-    envelope.output('output/envelope.pdf')
+    doc = Envelope()
+    doc.add_page()
+    doc.envelope_marks()
+    doc.output('output/envelope.pdf')
