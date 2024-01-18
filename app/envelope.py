@@ -1,6 +1,6 @@
 from fpdf import FPDF
 
-from app.constants import Mark
+from app.settings.constants import Mark
 
 
 class Envelope(FPDF):

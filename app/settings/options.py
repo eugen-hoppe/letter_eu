@@ -1,5 +1,6 @@
 from enum import Enum, IntEnum
 
+
 class Family(str, Enum):
     HEADING: str = "Courier"
     TEXT: str = "Helvetica"
