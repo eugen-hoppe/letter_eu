@@ -5,7 +5,7 @@ from api.models import Account, Transaction
 # Account
 # =======
 account = Account(
-    context=AccountContext.TEST,
+    context=AccountContext.SCHEMA,
     id="d.accounts[0].id",
     name="d.accounts[0].name",
     address_line_2="d.accounts[0].address_line_2",
@@ -19,7 +19,7 @@ account = Account(
 # Transactions
 # ============
 id_0 = Transaction(
-    context=TransactionContext.TEST,
+    context=TransactionContext.SCHEMA,
     subject="d.accounts[0].transactions[0].subject",
     id="d.accounts[0].transactions[0].id",
     salutation="d.accounts[0].transactions[0].salutation"

@@ -6,12 +6,13 @@ class AccountContext(IntEnum):
     OPERATION = auto()
     ACCOUNTING = auto()
     # ...
-    TEST = auto()
+    SCHEMA = auto()
 
 
 class TransactionContext(IntEnum):
     REQUEST = auto()
     RESPONSE = auto()
     INVOICE = auto()
+    DRAFT = auto()
     # ...
-    TEST = auto()
+    SCHEMA = auto()
