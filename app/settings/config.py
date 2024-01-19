@@ -1,32 +1,32 @@
 from enum import Enum
 
 
-class Account(str, Enum):  # TODO RENAME to Admin
-    NAME: str = "account.NAME"
-    ALIAS: str = "account.ALIAS"
-    STREET: str = "account.STREET"
-    POSTAL_CODE: str = "account.POSTAL_CODE"
-    CITY: str = "account.CITY"
-    TELEPHONE: str = "account.TELEPHONE"
-    EMAIL: str = "account.EMAIL"
-    WEB: str = "acoount.WEB"
+class Admin(str, Enum):
+    NAME: str = "d.admin.NAME"
+    ALIAS: str = "d.admin.ALIAS"
+    STREET: str = "d.admin.STREET"
+    POSTAL_CODE: str = "d.admin.POSTAL_CODE"
+    CITY: str = "d.admin.CITY"
+    TELEPHONE: str = "d.admin.TELEPHONE"
+    EMAIL: str = "d.admin.EMAIL"
+    WEB: str = "d.admin.WEB"
 
     @staticmethod
     def postal_code_and_city():
-        return Account.POSTAL_CODE + " " + Account.CITY
+        return Admin.POSTAL_CODE + " " + Admin.CITY
     
     @staticmethod
     def address(sep: str = "  |  "):
-        p_code_and_city = Account.postal_code_and_city()
-        return Account.NAME + sep + Account.STREET + sep + p_code_and_city
+        p_code_and_city = Admin.postal_code_and_city()
+        return Admin.NAME + sep + Admin.STREET + sep + p_code_and_city
 
     @staticmethod
     def contact(sep: str = "  |  "):
-        return Account.TELEPHONE + sep + Account.EMAIL + sep + Account.WEB
+        return Admin.TELEPHONE + sep + Admin.EMAIL + sep + Admin.WEB
 
 
-class Snippets(str, Enum):
-    DATE_KEY: str = "snippets.DATE_KEY"
-    ACCOUNT_ID_KEY: str = "snippets.ACCOUNT_ID_KEY"
-    TRANSACTION_ID_KEY: str = "snippets.TRANSACTION_ID_KEY"
-    DEFAULT_SALUTATION: str = "snippets.SALUTATION"
+class Key(str, Enum):
+    DATE: str = "key.DATE"
+    ACCOUNT_ID: str = "key.ACCOUNT_ID"
+    TRANSACTION_ID: str = "key.TRANSACTION_ID"
+    DEFAULT_SALUTATION_SNIPPET: str = "key.DEFAULT_SALUTATION_SNIPPET"

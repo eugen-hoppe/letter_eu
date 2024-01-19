@@ -12,7 +12,7 @@ class Info(Label):
         self.multi_cell(
             w=80,  # TODO param?
             h=5,  # TODO param?
-            txt=self.account.address(sep="\n")
+            txt=self.admin.address(sep="\n")
         )
     
     def info_contact(self):
@@ -21,7 +21,7 @@ class Info(Label):
         self.multi_cell(
             w=80,  # TODO param?
             h=5,  # TODO param?
-            txt=self.account.contact(sep="\n")
+            txt=self.admin.contact(sep="\n")
         )
     
     def info_date(self, sep: str = ": "):
@@ -30,7 +30,7 @@ class Info(Label):
         self.multi_cell(
             w=80,  # TODO param?
             h=5,  # TODO param?
-            txt=self.snipppets.DATE_KEY + sep + self.today()
+            txt=self.key.DATE + sep + self.today()
         )
     
     def info_header(self):

@@ -14,7 +14,7 @@ class Subject(Info):
 
     def sb_subject(self):
         self.set_xy(*self.sb_xy_title)
-        self.set_font(**self.options_font.H1)
+        self.set_font(**self.options_font.H3)
         self.multi_cell(
             w=160,  # TODO param?
             h=8,  # TODO param?
@@ -28,7 +28,7 @@ class Subject(Info):
         self.multi_cell(
             w=80,  # TODO param?
             h=5,  # TODO param?
-            txt=self.snipppets.ACCOUNT_ID_KEY + ": " + self.sb_acccount_id
+            txt=self.key.ACCOUNT_ID + ": " + self.sb_acccount_id
         )  # TODO method for account_id key value pair OR account context module
     
     def sb_context_transaction(self):
@@ -38,12 +38,12 @@ class Subject(Info):
         self.multi_cell(
             w=80,  # TODO param?
             h=5,  # TODO param?
-            txt=self.snipppets.TRANSACTION_ID_KEY + ": " + self.sb_transaction_id
+            txt=self.key.TRANSACTION_ID + ": " + self.sb_transaction_id
         )  # TODO method for transaction_id key value pair OR transaction context module
     
     def sb_context_salutation(self):
         if self.sb_salutation is None:
-            self.sb_salutation = self.snipppets.DEFAULT_SALUTATION
+            self.sb_salutation = self.key.DEFAULT_SALUTATION_SNIPPET
         self.set_text_color(*self.content_color)
         self.set_xy(*self.sb_xy_salutation)
         self.set_font(**self.options_font.P1)

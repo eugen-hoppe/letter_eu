@@ -2,14 +2,14 @@ from fpdf import FPDF
 
 from app.settings.constants import Mark, Path
 from app.settings.options import Font
-from app.settings.config import Account, Snippets
+from app.settings.config import Admin, Key
 
 
 class Envelope(FPDF):
     add_envelope_marks: bool = True
     options_font: Font = Font
-    snipppets: Snippets = Snippets
-    account: Account = Account
+    key: Key = Key
+    admin: Admin = Admin
 
     def envelope_marks(self):
         """

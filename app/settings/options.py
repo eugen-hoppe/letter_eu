@@ -13,9 +13,9 @@ class Style(str, Enum):
 
 
 class Size(IntEnum):
-    XXL: int = 24
-    XL: int = 20
-    L: int = 16
+    XXL: int = 20
+    XL: int = 17
+    L: int = 14
     M: int = 10
     S: int = 8
     XS: int = 6

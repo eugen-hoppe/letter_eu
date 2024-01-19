@@ -6,7 +6,7 @@ class Label(Letterhead):
     lb_color_sender: tuple[int, int, int] = (80, -1, -1)
     lb_xy_recipient: tuple[int, int] = (25, 60)
     lb_color_recipient: tuple[int, int, int] = (0, -1, -1)
-    lb_recipient_address: list[str] = []
+    account_address: list[str] = []
 
     def lb_sender(self):
         self.set_text_color(*self.lb_color_sender)
@@ -15,7 +15,7 @@ class Label(Letterhead):
         self.multi_cell(
             w=80,
             h=5,
-            txt=self.account.address()
+            txt=self.admin.address()
         )
 
     def lb_recipient(self):
@@ -25,7 +25,7 @@ class Label(Letterhead):
         self.multi_cell(
             80,
             5, 
-            txt="\n".join(self.lb_recipient_address)
+            txt="\n".join(self.account_address)
         ) 
 
     def lb_header(self):

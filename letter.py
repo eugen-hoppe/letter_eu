@@ -17,30 +17,30 @@ if __name__ == "__main__":
         doc.lh_header()
 
     label_recipient_address = [
-        "d.lb_recipient_address.name",
-        "d.lb_recipient_address.second_address_line",
-        "d.lb_recipient_address.street",
-        "d.lb_recipient_address.postal_code_and_city",
+        "d.account_address.name",
+        "d.account_address.address_line_2",
+        "d.account_address.street",
+        "d.account_address.postal_code_and_city",
     ]
 
     if examle_id == 3:
         example_pdfs[examle_id] = "label.pdf"
         doc = label.Label()
-        doc.lb_recipient_address = label_recipient_address
+        doc.account_address = label_recipient_address
         doc.add_page()
         doc.lb_header()
 
     if examle_id == 4:
         example_pdfs[examle_id] = "info.pdf"
         doc = info.Info()
-        doc.lb_recipient_address = label_recipient_address
+        doc.account_address = label_recipient_address
         doc.add_page()
         doc.info_header()
 
     if examle_id == 5:
         example_pdfs[examle_id] = "subject.pdf"
         doc = subject.Subject()
-        doc.lb_recipient_address = label_recipient_address
+        doc.account_address = label_recipient_address
         doc.sb_acccount_id = "d.sb_account_id"
         doc.sb_transaction_id = "d.sb_transaction_id"
         doc.sb_title = "d.sb_title"
