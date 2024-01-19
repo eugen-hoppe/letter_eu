@@ -21,3 +21,11 @@ class Letterhead(Envelope):
         if self.lh_is_1st_page_different:
             raise NotImplementedError()  # TODO lh_n_* Attributes
         return self.lh_1_page()
+
+    def lh_header(self) -> None:
+        if self.add_envelope_marks:
+            self.envelope_marks()
+        if self.page_no() == 1:
+            self.lh_1_page()
+        else:
+            self.lh_n_pages()
