@@ -5,6 +5,7 @@ class AccountContext(IntEnum):
     ADMINISTRATION = auto()
     OPERATION = auto()
     ACCOUNTING = auto()
+    EXAMPLE = auto()
     # ...
     SCHEMA = auto()
 
