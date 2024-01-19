@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class Account(str, Enum):
+class Account(str, Enum):  # TODO RENAME to Admin
     NAME: str = "account.NAME"
     ALIAS: str = "account.ALIAS"
     STREET: str = "account.STREET"
@@ -26,5 +26,7 @@ class Account(str, Enum):
 
 
 class Snippets(str, Enum):
-    DATE: str = "snippets.DATE"
-
+    DATE_KEY: str = "snippets.DATE_KEY"
+    ACCOUNT_ID_KEY: str = "snippets.ACCOUNT_ID_KEY"
+    TRANSACTION_ID_KEY: str = "snippets.TRANSACTION_ID_KEY"
+    DEFAULT_SALUTATION: str = "snippets.SALUTATION"

@@ -1,8 +1,8 @@
-from app import envelope, letterhead, label, info
+from app import envelope, letterhead, label, info, subject
 
 
 if __name__ == "__main__":
-    example_pdfs, examle_id = {}, 4
+    example_pdfs, examle_id = {}, 5
 
     if examle_id == 1:
         example_pdfs[examle_id] = "envelope.pdf"
@@ -36,5 +36,15 @@ if __name__ == "__main__":
         doc.lb_recipient_address = label_recipient_address
         doc.add_page()
         doc.info_header()
+
+    if examle_id == 5:
+        example_pdfs[examle_id] = "subject.pdf"
+        doc = subject.Subject()
+        doc.lb_recipient_address = label_recipient_address
+        doc.sb_acccount_id = "d.sb_account_id"
+        doc.sb_transaction_id = "d.sb_transaction_id"
+        doc.sb_title = "d.sb_title"
+        doc.add_page()
+        doc.sb_header()
 
     doc.output(doc.const_path().PDF + str(examle_id) + "_" + example_pdfs[examle_id])

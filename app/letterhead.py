@@ -9,11 +9,11 @@ class Letterhead(Envelope):
     lh_color: tuple[int, int, int] = (140, -1, -1)
 
     def lh_1_page(self) -> None:
+        self.set_text_color(*self.lh_color)
         if self.lh_logo:
             self.image(self.lh_logo, **self.lh_logo_xyw)
         self.set_font(**self.options_font.H1)
         self.set_xy(*self.lh_xy)
-        self.set_text_color(*self.lh_color)
         self.cell(0, txt=self.account.ALIAS)
     
     def lh_n_pages(self) -> None:
@@ -24,6 +24,8 @@ class Letterhead(Envelope):
     def lh_header(self) -> None:
         if self.add_envelope_marks:
             self.envelope_marks()
+        # Letterhead Header
+        # =================
         if self.page_no() == 1:
             self.lh_1_page()
         else:

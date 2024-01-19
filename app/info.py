@@ -5,8 +5,6 @@ class Info(Label):
     info_xy_information: tuple[int, int] = (125, 50)
     info_xy_contact: tuple[int, int] = (125, 70)
     info_xy_date: tuple[int, int] = (125, 90)
-    info_date_label_name: str = ""
-
     
     def info_information(self):
         self.set_xy(*self.info_xy_information)
@@ -32,11 +30,13 @@ class Info(Label):
         self.multi_cell(
             w=80,  # TODO param?
             h=5,  # TODO param?
-            txt=self.snipppets.DATE + sep + self.today()
+            txt=self.snipppets.DATE_KEY + sep + self.today()
         )
     
     def info_header(self):
         self.lb_header()
+        # Info Header
+        # ===========
         self.info_information()
         self.info_contact()
         self.info_date()
