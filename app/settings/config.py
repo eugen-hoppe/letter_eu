@@ -23,3 +23,8 @@ class Account(str, Enum):
     @staticmethod
     def contact(sep: str = "  |  "):
         return Account.TELEPHONE + sep + Account.EMAIL + sep + Account.WEB
+
+
+class Snippets(str, Enum):
+    DATE: str = "snippets.DATE"
+

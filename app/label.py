@@ -12,7 +12,7 @@ class Label(Letterhead):
         self.multi_cell(
             w=80,
             h=5,
-            txt=self.conf_account().address()
+            txt=self.account.address()
         )
 
     def lb_recipient(self):

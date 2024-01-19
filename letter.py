@@ -37,4 +37,4 @@ if __name__ == "__main__":
         doc.add_page()
         doc.info_header()
 
-    doc.output(doc.const_path().PDF + example_pdfs[examle_id])
+    doc.output(doc.const_path().PDF + str(examle_id) + "_" + example_pdfs[examle_id])

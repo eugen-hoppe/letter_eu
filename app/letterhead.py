@@ -14,7 +14,7 @@ class Letterhead(Envelope):
         self.set_font(**self.options_font.H1)
         self.set_xy(*self.lh_xy)
         self.set_text_color(*self.lh_color)
-        self.cell(0, txt=self.conf_account().ALIAS.value)
+        self.cell(0, txt=self.account.ALIAS)
     
     def lh_n_pages(self) -> None:
         if self.lh_is_1st_page_different:
