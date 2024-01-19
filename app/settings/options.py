@@ -16,10 +16,10 @@ class Size(IntEnum):
     XXL: int = 24
     XL: int = 20
     L: int = 16
-    M: int = 12
-    S: int = 10
-    XS: int = 8
-    XXS: int = 6
+    M: int = 10
+    S: int = 8
+    XS: int = 6
+    XXS: int = 5
 
 
 class Font(dict, Enum):
