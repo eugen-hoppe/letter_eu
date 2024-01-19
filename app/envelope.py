@@ -2,6 +2,7 @@ from fpdf import FPDF
 
 from app.settings.constants import Mark, Path
 from app.settings.options import Font
+from app.settings.config import Account
 
 
 class Envelope(FPDF):
@@ -19,3 +20,7 @@ class Envelope(FPDF):
     @staticmethod
     def const_path() -> Path:
         return Path
+    
+    @staticmethod
+    def conf_account() -> Account:
+        return Account

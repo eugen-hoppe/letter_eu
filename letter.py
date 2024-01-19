@@ -11,14 +11,11 @@ if __name__ == "__main__":
     if examle_id == 2:
         example_pdfs[examle_id] = "letterhead.pdf"
         doc = letterhead.Letterhead()
-        doc.lh_title = "d.lh_title"
         doc.add_page()
         doc.lh_header()
     if examle_id == 3:
         example_pdfs[examle_id] = "label.pdf"
         doc = label.Label()
-        doc.lh_title = "d.lh_title"
-        doc.lb_sender_address = "d.lb_sender_address"
         doc.lb_recipient_address = [
             "d.lb_recipient_address.name",
             "d.lb_recipient_address.second_address_line",

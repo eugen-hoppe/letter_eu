@@ -3,7 +3,6 @@ from app.letterhead import Letterhead
 
 class Label(Letterhead):
     lb_xy_sender: tuple[int, int] = (30, 50)
-    lb_sender_address: str = ""
     lb_xy_recipient: tuple[int, int] = (30, 60)
     lb_recipient_address: list[str] = []
 
@@ -13,7 +12,7 @@ class Label(Letterhead):
         self.multi_cell(
             w=80,
             h=5,
-            txt=self.lb_sender_address
+            txt=self.conf_account().address()
         )
 
     def lb_recipient(self):
