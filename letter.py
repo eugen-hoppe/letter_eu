@@ -1,9 +1,22 @@
-from app.envelope import Envelope
+from app import envelope, letterhead
+
+
+class Letter(letterhead.Letterhead):
+    def header(self) -> None:
+        if self.add_envelope_marks:
+            self.envelope_marks()
+        if self.page_no() == 1:
+            self.lh_1_page()
+        else:
+            self.lh_n_pages()
 
 
 if __name__ == "__main__":
-    doc = Envelope()
+    examle_id = 2
+    if examle_id == 1:
+        doc = envelope.Envelope()
+    if examle_id == 2:
+        doc = Letter()
+        doc.lh_title = "d.lh_title"
     doc.add_page()
-    doc.envelope_marks()
-
-    doc.output('output/envelope.pdf')
+    doc.output('output/letterhead.pdf')

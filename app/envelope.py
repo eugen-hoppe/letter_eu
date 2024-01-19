@@ -1,9 +1,13 @@
 from fpdf import FPDF
 
+from app.settings.options import Font
 from app.settings.constants import Mark
 
 
 class Envelope(FPDF):
+    add_envelope_marks: bool = True
+    options_font: Font = Font
+
     def envelope_marks(self):
         """
         Adds hole mark (HM) and folding marks (FM1 + FM2) to template
