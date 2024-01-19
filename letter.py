@@ -19,4 +19,4 @@ if __name__ == "__main__":
         doc = Letter()
         doc.lh_title = "d.lh_title"
     doc.add_page()
-    doc.output('output/letterhead.pdf')
+    doc.output(doc.const_path().PDF + "letterhead.pdf")

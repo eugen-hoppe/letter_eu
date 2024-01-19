@@ -3,7 +3,7 @@ from app.envelope import Envelope
 
 class Letterhead(Envelope):
     lh_is_1st_page_different: bool = False
-    lh_logo: str | None = "app/settings/logo.png"
+    lh_logo: str | None = Envelope.const_path().LOGO
     lh_logo_xyw: dict[str, int] = dict(x=25, y=5, w=20)
     lh_xy: tuple[int, int] = (50, 10)
     lh_color: tuple[int, int, int] = (140, -1, -1)

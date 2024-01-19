@@ -1,7 +1,7 @@
 from fpdf import FPDF
 
+from app.settings.constants import Mark, Path
 from app.settings.options import Font
-from app.settings.constants import Mark
 
 
 class Envelope(FPDF):
@@ -15,3 +15,7 @@ class Envelope(FPDF):
         self.line(Mark.LEFT, Mark.FOLD_Y1, Mark.FOLD_X, Mark.FOLD_Y1)  # FM1
         self.line(Mark.LEFT, Mark.HOLE_Y, Mark.HOLE_X, Mark.HOLE_Y)  # HM
         self.line(Mark.LEFT, Mark.FOLD_Y2, Mark.FOLD_X, Mark.FOLD_Y2)  # FM2
+    
+    @staticmethod
+    def const_path() -> Path:
+        return Path

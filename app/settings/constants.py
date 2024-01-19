@@ -8,3 +8,8 @@ class Mark(float, Enum):
     FOLD_Y1: float = 105.0
     FOLD_Y2: float = 210.0
     FOLD_X: float = 4.5
+
+
+class Path(str, Enum):
+    PDF: str = "output/"
+    LOGO: str = "app/settings/logo.png"
