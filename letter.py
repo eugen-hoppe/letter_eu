@@ -2,7 +2,7 @@ from app import envelope, letterhead, label, info, subject, content
 
 
 if __name__ == "__main__":
-    example_pdfs, examle_id = {}, 6
+    example_pdfs, examle_id = {}, 7
 
     if examle_id == 1:
         example_pdfs[examle_id] = "envelope.pdf"
@@ -60,13 +60,42 @@ if __name__ == "__main__":
         doc.sb_transaction_id = "d.sb_transaction_id"
         doc.sb_title = "d.sb_title"
         doc.signature = [
-            "signature.address() | signature.contact()",
-            "signature.legal()",
-            "signature.disclaimer()",
+            doc.admin.address(),
+            doc.admin.contact(),
         ]
         doc.add_page()
         doc.cnt_text(["content line 1", "", "content line 3"], y_add=10)
         doc.cnt_table(tb_data)
         doc.cnt_text(["content line 4", "content ... " * 25 , "content line n"])
+
+    if examle_id == 7:
+        example_pdfs[examle_id] = "example.pdf"
+        doc = content.Content()
+        doc.account_address = [
+            "Beispiel & Muster GmbH",
+            "z.Hd. John Doe",
+            "Milchstraße 404",
+            "04040 Berlin"
+        ]
+        doc.sb_acccount_id = "8514731393628"
+        doc.sb_transaction_id = "08.01.2024"
+        doc.sb_title = "Projekt 404"
+        doc.signature = [
+            doc.admin.address() + "  |  " +  doc.admin.contact(),
+        ]
+        doc.add_page()
+        text_1 = "das Projekt 404 konnte nicht gefunden werden, "
+        text_1 += "da es ein um ein Beispiel handelt. " 
+        text_1 += "Sollte es um kein Beipiel handeln, dann teilen Sie mir bitte das mit."
+        text_2 = "Vielen Dank im Voraus"
+
+        doc.cnt_text(
+            [text_1, "", text_2],
+            y_add=10
+        )
+        doc.cnt_text(
+            ["Mit freundlichen Grüßen", " ", doc.admin.NAME],
+            y_add=15
+        )
 
     doc.output(doc.const_path().PDF + str(examle_id) + "_" + example_pdfs[examle_id])

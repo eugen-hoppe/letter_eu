@@ -1,15 +1,24 @@
+import os
+
+from os.path import join, dirname
+
 from enum import Enum
+
+from dotenv import load_dotenv
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 
 class Admin(str, Enum):
-    NAME: str = "d.admin.NAME"
-    ALIAS: str = "d.admin.ALIAS"
-    STREET: str = "d.admin.STREET"
-    POSTAL_CODE: str = "d.admin.POSTAL_CODE"
-    CITY: str = "d.admin.CITY"
-    TELEPHONE: str = "d.admin.TELEPHONE"
-    EMAIL: str = "d.admin.EMAIL"
-    WEB: str = "d.admin.WEB"
+    NAME: str = os.environ.get("ADMIN_NAME", "d.admin.NAME")
+    ALIAS: str = os.environ.get("ADMIN_ALIAS", "d.admin.ALIAS")
+    STREET: str = os.environ.get("ADMIN_STREET", "d.admin.STREET")
+    POSTAL_CODE: str = os.environ.get("ADMIN_POSTAL_CODE", "d.admin.POSTAL_CODE")
+    CITY: str = os.environ.get("ADMIN_CITY", "d.admin.CITY")
+    TELEPHONE: str = os.environ.get("ADMIN_TELEPHONE", "d.admin.TELEPHONE")
+    EMAIL: str = os.environ.get("ADMIN_EMAIL", "d.admin.EMAIL")
+    WEB: str = os.environ.get("ADMIN_WEB", "d.admin.WEB")
 
     @staticmethod
     def postal_code_and_city():
@@ -26,8 +35,10 @@ class Admin(str, Enum):
 
 
 class Key(str, Enum):
-    DATE: str = "key.DATE"
-    ACCOUNT_ID: str = "key.ACCOUNT_ID"
-    TRANSACTION_ID: str = "key.TRANSACTION_ID"
-    DEFAULT_SALUTATION_SNIPPET: str = "key.DEFAULT_SALUTATION_SNIPPET"
-    PAGE_NUMBER: str = "key.PAGE_NUMBER"
+    DATE: str = os.environ.get("KEY_DATE", "key.DATE")
+    ACCOUNT_ID: str = os.environ.get("KEY_ACCOUNT_ID", "key.ACCOUNT_ID")
+    TRANSACTION_ID: str = os.environ.get("KEY_TRANSACTION_ID", "key.TRANSACTION_ID")
+    PAGE_NUMBER: str = os.environ.get("KEY_PAGE_NUMBER", "key.PAGE_NUMBER")
+    DEFAULT_SALUTATION_SNIPPET: str = os.environ.get(
+        "KEY_DEFAULT_SALUTATION_SNIPPET", "key.DEFAULT_SALUTATION_SNIPPET"
+    )
