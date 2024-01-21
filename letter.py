@@ -85,8 +85,8 @@ if __name__ == "__main__":
         ]
         doc.add_page()
         text_1 = "das Projekt 404 konnte nicht gefunden werden, "
-        text_1 += "da es ein um ein Beispiel handelt." 
-        text_1 += "Sollte es um kein Beipiel handelt dann teilen Sie mir bitte das mit."
+        text_1 += "da es ein um ein Beispiel handelt. " 
+        text_1 += "Sollte es um kein Beipiel handeln, dann teilen Sie mir bitte das mit."
         text_2 = "Vielen Dank im Voraus"
 
         doc.cnt_text(
