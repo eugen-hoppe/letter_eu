@@ -45,16 +45,13 @@ if __name__ == "__main__":
         doc.sb_transaction_id = "d.sb_transaction_id"
         doc.sb_title = "d.sb_title"
 
-    text = [
-        "Text A " * 30,
-        "Text B " * 10
-    ]
     tb_data = [
         ("d.tb_column[0]", "d.tb_column[..]", "d.tb_column[n]"),
         ("d.tb_row[0][0]", "d.tb_row[0][..]", "d.tb_row[0][n]"),
         ("d.tb_row[..][0]", "d.tb_row[..][..]", "d.tb_row[..][n]"),
         ("d.tb_row[n][0]", "d.tb_row[n][..]", "d.tb_row[n][n]"),
     ]
+
     if examle_id == 6:
         example_pdfs[examle_id] = "content.pdf"
         doc = content.Content()
@@ -62,6 +59,11 @@ if __name__ == "__main__":
         doc.sb_acccount_id = "d.sb_account_id"
         doc.sb_transaction_id = "d.sb_transaction_id"
         doc.sb_title = "d.sb_title"
+        doc.signature = [
+            "signature.address() | signature.contact()",
+            "signature.legal()",
+            "signature.disclaimer()",
+        ]
         doc.add_page()
         doc.cnt_text(["content line 1", "", "content line 3"], y_add=10)
         doc.cnt_table(tb_data)

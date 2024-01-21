@@ -1,7 +1,7 @@
-from app.subject import Subject
+from app.signature import Signature
 
 
-class Content(Subject):
+class Content(Signature):
     content_xy: tuple[int, int] = (25, 130)
     content_line_height: int = 5
     tb_width: int = 160
@@ -22,6 +22,7 @@ class Content(Subject):
         self.n_page_y_shift(len(text) * self.content_line_height)
 
     def cnt_table(self, tb: list[tuple[str, ...]], y_add: int = 5):
+        self.set_text_color(*self.content_color)
         tb_kwargs = {
             "line_height": self.content_line_height,
             "borders_layout": "NONE",

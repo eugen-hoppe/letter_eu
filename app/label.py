@@ -11,7 +11,7 @@ class Label(Letterhead):
     def lb_sender(self):
         self.set_text_color(*self.lb_color_sender)
         self.set_xy(*self.lb_xy_sender)
-        self.set_font(**self.options_font.P3)
+        self.set_font(**self.options_font.P5)
         self.multi_cell(
             w=80,
             h=5,

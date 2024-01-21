@@ -30,3 +30,4 @@ class Key(str, Enum):
     ACCOUNT_ID: str = "key.ACCOUNT_ID"
     TRANSACTION_ID: str = "key.TRANSACTION_ID"
     DEFAULT_SALUTATION_SNIPPET: str = "key.DEFAULT_SALUTATION_SNIPPET"
+    PAGE_NUMBER: str = "key.PAGE_NUMBER"

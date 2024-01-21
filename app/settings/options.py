@@ -18,8 +18,8 @@ class Size(IntEnum):
     L: int = 14
     M: int = 10
     S: int = 8
-    XS: int = 6
-    XXS: int = 5
+    XS: int = 7
+    XXS: int = 6
 
 
 class Font(dict, Enum):
@@ -33,4 +33,5 @@ class Font(dict, Enum):
     P2: dict = dict(family=Family.TEXT, style=Style.EVEN, size=Size.S)
     P3: dict = dict(family=Family.TEXT, style=Style.ODD, size=Size.XS)
     P4: dict = dict(family=Family.TEXT, style=Style.EVEN, size=Size.XXS)
+    P5: dict = dict(family=Family.TEXT, style=Style.ODD, size=Size.XXS)
     PI: dict = dict(family=Family.TEXT, style=Style.ITALIC, size=Size.M)
