@@ -4,10 +4,11 @@ from app.subject import Subject
 class Signature(Subject):
     signature: list[str] = []
     signature_color: tuple[int, int, int] = (100, -1, -1)
+    signature_y_negative: int = 10
 
     def footer(self) -> None:
         self.set_text_color(*self.signature_color)
-        self.set_y(-15)
+        self.set_y(-1 * self.signature_y_negative)
         self.set_font(**self.options_font.P3)
         self.multi_cell(0, 3, "\n".join(self.signature), align='C')
         self.set_y(-8)
