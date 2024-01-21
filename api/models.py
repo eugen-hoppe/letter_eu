@@ -23,5 +23,5 @@ class Account:
 class Transaction:
     subject: str
     id: str  # timestamp as default value?
-    salutation: str
+    salutation: str | None = None
     context: TransactionContext = TransactionContext.REQUEST

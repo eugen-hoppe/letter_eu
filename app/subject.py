@@ -8,7 +8,7 @@ class Subject(Info):
     sb_y_recipient_context_fields: int = 115
     sb_acccount_id: str = ""
     sb_transaction_id: str = ""
-    sb_xy_salutation: tuple[int, int] = (25, 125)
+    sb_xy_salutation: tuple[int, int] = (25, 130)
     sb_salutation: str | None = None
     content_color: tuple[int, int, int] = (0, -1, -1)
 
@@ -53,11 +53,12 @@ class Subject(Info):
             txt=self.sb_salutation
         )
     
-    def sb_header(self):
-        self.info_header()
-        # Subjetct Header
-        # ===============
-        self.sb_subject()
-        self.sb_context_account()
-        self.sb_context_transaction()
-        self.sb_context_salutation()
+    def header(self):
+        if self.page_no() == 1:
+            self.info_header()
+            # Subjetct Header
+            # ===============
+            self.sb_subject()
+            self.sb_context_account()
+            self.sb_context_transaction()
+            self.sb_context_salutation()

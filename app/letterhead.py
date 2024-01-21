@@ -28,5 +28,3 @@ class Letterhead(Envelope):
         # =================
         if self.page_no() == 1:
             self.lh_1_page()
-        else:
-            self.lh_n_pages()
